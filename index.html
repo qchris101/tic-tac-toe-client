@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe!</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,38 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
-    </body>
+      <h1>Tic Tac Toe</h1>
+      <div class ="container">
+
+        <!-- Button trigger modal -->
+        <nav class="navbar fixed-top navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            </div>
+            <form>
+                <button type="button" id ="sign-up" class="btn btn-dark">Sign Up</button>
+                <button type="button" id ="sign-in" class="btn btn-dark">Sign In</button>
+                <button type="button" id ="new-game" class="btn btn-dark">New Game!</button>
+                <button type="button" id = "sign-out" class="btn btn-dark">Sign Out</button>
+              </form>
+            </nav>
+          </div>
+
+          <div class="row">
+
+            <div class="col-4  box alt-color">1</div>
+            <div class="col-4  box alt-color">2</div>
+            <div class="col-4  box alt-color">3</div>
+            <div class="col-4  box color">4</div>
+            <div class="col-4  box color">5</div>
+            <div class="col-4  box color">6</div>
+            <div class="col-4  box alt-color">7</div>
+            <div class="col-4  box alt-color">8</div>
+            <div class="col-4  box alt-color">9</div>
+
+          </div>
+          <form class="restart-game">
+          <button type="button" class="btn btn-dark"> Want to Play again? </button>
+        </form>
+          </body>
 </html>

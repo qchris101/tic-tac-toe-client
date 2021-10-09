@@ -1,1 +1,39 @@
 @import '~bootstrap/scss/bootstrap';
+body {
+  background-color: grey;
+  margin-top: 200px;
+}
+.btn {
+  outline: solid;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.box {
+  align-items: center;
+  background-color: white;
+  border: 3px solid black;
+  color: white;
+  display: flex;
+  font-family: 'Playfair Display', serif;
+  height: 80px;
+  justify-content: center;
+  padding-inline-end: 5px;
+}
+
+.alt-color {
+  background-color: white;
+}
+
+h1 {
+  text-align: center;
+  color: black;
+}
+
+.restart-game {
+  margin-top: 50px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
