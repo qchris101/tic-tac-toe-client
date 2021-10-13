@@ -12,7 +12,8 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Tic Tac Toe</h1>
+      <h1 id="playerStatus">Tic Tac Toe</h1>
+      <h2 ></h2>
       <div class ="container">
         <nav class="navbar fixed-top navbar-dark bg-dark">
           <div class="container-fluid">
@@ -37,26 +38,27 @@
                     <button type="submit" class="btn btn-dark">Sign In</button>
                   </fieldset>
                 </form>
-                <button type="click" id ="new-game" class="btn btn-dark">New Game!</button>
+                <button type="click" id="new-game" class="btn btn-dark">New Game!</button>
                 <form id = "sign-out">
                 <button type="submit"  class="btn btn-dark">Sign Out</button>
               </form>
               </nav>
           </div>
+          <div class="container">
+            <div class="row">
 
-          <div class="row">
-
-            <div class="col-4  box alt-color">1</div>
-            <div class="col-4  box alt-color">2</div>
-            <div class="col-4  box alt-color">3</div>
-            <div class="col-4  box color">4</div>
-            <div class="col-4  box color">5</div>
-            <div class="col-4  box color">6</div>
-            <div class="col-4  box alt-color">7</div>
-            <div class="col-4  box alt-color">8</div>
-            <div class="col-4  box alt-color">9</div>
+                  <div class="col-4  box color" id="indexZero"></div>
+                  <div class="col-4  box color" id="indexOne"></div>
+                  <div class="col-4  box color" id="indexTwo"></div>
+                  <div class="col-4  box color" id="indexThree"></div>
+                  <div class="col-4  box color" id="indexFour"></div>
+                  <div class="col-4  box color" id="indexFive"></div>
+                  <div class="col-4  box color" id="indexSix"></div>
+                  <div class="col-4  box color" id="indexSeven"></div>
+                  <div class="col-4  box color" id="indexEight"></div>
 
           </div>
+        </div>
           <form class="restart-game">
           <button type="button" class="btn btn-dark"> Want to Play again? </button>
         </form>
