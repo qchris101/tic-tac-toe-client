@@ -3,6 +3,10 @@ body {
   background-color: grey;
   margin-top: 300px;
 }
+h1 {
+  text-align: center;
+  color: black;
+}
 .btn {
   outline: solid;
   margin-left: 10px;
@@ -11,24 +15,19 @@ body {
 
 .box {
   align-items: center;
-  background-color: white;
+  background-color:white;
   border: 3px solid black;
-  color: white;
+  color:black;
   display: flex;
   font-family: 'Playfair Display', serif;
   height: 80px;
   justify-content: center;
 }
 
-.alt-color {
-  background-color: white;
-}
 
-h1 {
-  text-align: center;
-  color: black;
+.container {
+  max-width: 376px;
 }
-
 .restart-game {
   margin-top: 50px;
   align-items: center;
@@ -36,3 +35,7 @@ h1 {
   justify-content: center;
 }
 
+p {
+  font-size: 75px;
+  text-align: center;
+}
