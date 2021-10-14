@@ -54,13 +54,31 @@ const signOutFailure = (error) => {
   console.error('error is' + error)
 }
 
-// In here im going to write the code that references when
-// the game is complete and shows who is the winner/loser/ and tie.
+const newGameSuccess = (responseData) => {
+  store.user = responseData.user
+  $('#movies-display').text('New Game Started successfully')
+  $('#movies-display').removeClass()
+  $('#movies-display').addClass('text-success')
+  $('form').trigger('reset')
+  $('#after-sign-in').hide()
+  $('#before-sign-in').show()
+}
+const newGameFailure = (error) => {
+  $('#error-message').text('New Game failed')
+
+  $('#error-message').removeClass()
+
+  $('#error-message').addClass('text-danger')
+  console.error('error is' + error)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  newGameFailure,
+  newGameSuccess
 }
