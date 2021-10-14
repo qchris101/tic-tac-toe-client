@@ -53,6 +53,9 @@ const signOutFailure = (error) => {
   $('#error-message').addClass('text-danger')
   console.error('error is' + error)
 }
+
+// In here im going to write the code that references when
+// the game is complete and shows who is the winner/loser/ and tie.
 module.exports = {
   signUpSuccess,
   signUpFailure,
