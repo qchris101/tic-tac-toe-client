@@ -39,3 +39,13 @@ p {
   font-size: 75px;
   text-align: center;
 }
+
+.disabled-div {
+  pointer-events: none;
+}
+
+#player {
+  text-align: center;
+  text-decoration: solid;
+  font-size: 50px;
+}
