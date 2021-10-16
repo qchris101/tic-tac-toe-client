@@ -32,11 +32,13 @@ const newGame = (formData) => {
     method: 'POST',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    }
+    },
+    data: {}
   })
 }
 module.exports = {
   signUp,
   signIn,
-  signOut
+  signOut,
+  newGame
 }
