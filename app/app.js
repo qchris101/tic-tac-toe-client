@@ -18,4 +18,5 @@ $(() => {
   $('#indexSeven').on('click', authEvents.indexSeven)
   $('#indexEight').on('click', authEvents.indexEight)
   $('#newGame').on('submit', authEvents.newGame)
+  $('#restart-game').on('click', authEvents.restartGame)
 })
