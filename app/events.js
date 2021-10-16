@@ -25,11 +25,11 @@ const onSignOut = (event) => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-
   api.signOut(formData)
     .then(ui.onSignOutSuccess)
     .catch(ui.onSignOutFailure)
 }
+
 const newGame = (event) => {
   event.preventDefault()
   const form = event.target
@@ -38,7 +38,7 @@ const newGame = (event) => {
   api.newGame(formData)
     .then(ui.onNewGameSuccess)
     .catch(ui.onNewGameFailure)
-}
+  }
 
 let currentPlayer = 'X'
 const playerRotation = function () {
@@ -50,7 +50,7 @@ const playerRotation = function () {
   return currentPlayer
 }
 
-const spacesOnboard = ['', '', '', '', '', '', '', '', '']
+let spacesOnboard = ['', '', '', '', '', '', '', '', '']
 
 playerRotation()
 const winConditions = function (spacesOnboard) {
@@ -219,6 +219,22 @@ const indexEight = function (event) {
     console.log('This space is already used up!')
   }
 }
+const restartGame = function (event) {
+  event.preventDefault()
+  spacesOnboard = ['', '', '', '', '', '', '', '', '']
+  document.getElementById('indexZero').innerHTML = ''
+  document.getElementById('indexOne').innerHTML = ''
+  document.getElementById('indexTwo').innerHTML = ''
+  document.getElementById('indexThree').innerHTML = ''
+  document.getElementById('indexFour').innerHTML = ''
+  document.getElementById('indexFive').innerHTML = ''
+  document.getElementById('indexSix').innerHTML = ''
+  document.getElementById('indexSeven').innerHTML = ''
+  document.getElementById('indexEight').innerHTML = ''
+  currentPlayer = 'O'
+  $('#player').text('')
+  $('.container').removeClass('disabled-div')
+}
 module.exports = {
   onSignUp,
   onSignIn,
@@ -231,6 +247,8 @@ module.exports = {
   indexFive,
   indexSix,
   indexSeven,
-  indexEight
+  indexEight,
+  newGame,
+  restartGame
 
 }
