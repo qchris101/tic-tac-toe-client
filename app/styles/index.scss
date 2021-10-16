@@ -1,7 +1,10 @@
 @import '~bootstrap/scss/bootstrap';
 body {
-  background-color: grey;
+  background-color: #8CBEB2;
   margin-top: 300px;
+}
+nav {
+  background-color: #F3B562;
 }
 h1 {
   text-align: center;
@@ -15,9 +18,9 @@ h1 {
 
 .box {
   align-items: center;
-  background-color:white;
-  border: 3px solid black;
-  color:black;
+  background-color:#F2EBBF;
+  border: 3px solid #F06060;
+  color:#5C4B51;
   display: flex;
   font-family: 'Playfair Display', serif;
   height: 80px;
@@ -48,4 +51,5 @@ p {
   text-align: center;
   text-decoration: solid;
   font-size: 50px;
+  color: #F06060;
 }

@@ -15,7 +15,7 @@
       <h1 id="playerStatus">Tic Tac Toe</h1>
       <h2 ></h2>
       <div class ="container">
-        <nav class="navbar fixed-top navbar-dark bg-dark">
+        <nav class="navbar fixed-top">
           <div class="container-fluid">
             <a class="navbar-brand" href="#"></a>
             </div>
@@ -39,7 +39,9 @@
                     <button type="submit" class="btn btn-dark">Sign In</button>
                   </fieldset>
                 </form>
-                <button type="submit" id="newGame" class="btn btn-dark">New Game!</button>
+                <form id="newGame">
+                <button type="submit" class="btn btn-dark">New Game!</button>
+                </form>
                 <form id = "sign-out">
                 <button type="submit"  class="btn btn-dark">Sign Out</button>
               </form>
@@ -62,8 +64,8 @@
 
           </div>
         </div>
-          <form class="restart-game">
-          <button type="button" class="btn btn-dark"> Want to Play again? </button>
+          <form id="restart-game">
+          <button type="submit" class="btn btn-dark"> Want to Play again? </button>
         </form>
           </body>
 </html>
