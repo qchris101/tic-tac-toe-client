@@ -17,5 +17,5 @@ $(() => {
   $('#indexSix').on('click', authEvents.indexSix)
   $('#indexSeven').on('click', authEvents.indexSeven)
   $('#indexEight').on('click', authEvents.indexEight)
-  $('#new-game').on('click', authEvents.newGame)
+  $('#newGame').on('submit', authEvents.newGame)
 })
