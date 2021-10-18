@@ -11,47 +11,56 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
-      <h1 id="playerStatus">Tic Tac Toe</h1>
-      <h2 ></h2>
+    <body >
+      <h1 id= "hide-after-signUp">Please Sign Up or Sign In to play!</h1>
+      <h1 id="hide-GameName">Tic Tac Toe</h1>
+      <h2 id="playerStatus"></h2>
       <div class ="container">
         <nav class="navbar fixed-top">
           <div class="container-fluid">
             <a class="navbar-brand" href="#"></a>
             </div>
-              <form id="sign-up" class="border">
+            <div class="before-sign-in">
+              <form id="sign-up">
                 <fieldset>
+                  <section class="signUp-display" id="signUpFail"></section>
                   <legend>Sign Up</legend>
                   <input type="email" name="credentials[email]" placeholder="Email"  required>
                   <input type="password" name="credentials[password]" placeholder="Password" required>
-                  <input type= "password" name="credentials[password_confirmation]" placeholder="Password" required>
+                  <input type= "password" name="credentials[password_confirmation]" placeholder="Password Confirmation" required>
                   <button type="submit" class="btn btn-dark">Sign Up</button>
 
                 </fieldset>
 
               </form>
-
-                <form id="sign-in" class="border">
+            </div>
+                <div class="after-sign-in">
+                <form id="sign-in" >
                   <fieldset>
                     <legend>Sign In</legend>
                     <input type="email" name="credentials[email]" placeholder="Email" required>
                     <input type="password" name="credentials[password]" placeholder="Password" required>
                     <button type="submit" class="btn btn-dark">Sign In</button>
+                    <section class="signIn-display" id="signInFail"></section>
                   </fieldset>
                 </form>
+                </div>
+                <div id="signOut-display">
                 <form id="newGame">
                 <button type="submit" class="btn btn-dark">New Game!</button>
                 </form>
                 <form id = "sign-out">
+                  <section ></section>
                 <button type="submit"  class="btn btn-dark">Sign Out</button>
               </form>
+              </div>
               </nav>
           </div>
            <section>
               <div id="player"></div>
             </section>
-          <div class="container">
-            <div class="row">
+          <div class="container" id = "hide-Game">
+            <div class="row" id="gameBoard">
                   <div class="col-4  box color" id="indexZero"></div>
                   <div class="col-4  box color" id="indexOne"></div>
                   <div class="col-4  box color" id="indexTwo"></div>
@@ -64,7 +73,7 @@
 
           </div>
         </div>
-          <form id="restart-game">
+          <form id="restart-game" class="hide-Restart">
           <button type="submit" class="btn btn-dark"> Want to Play again? </button>
         </form>
           </body>

@@ -2,47 +2,44 @@
 const store = require('./store')
 
 const signUpSuccess = function (responseData) {
-  $('#movies-display').text('Signed up successfully!')
-  $('#movies-display').addClass('text-success')
-  $('form').trigger('reset')
-
+  $('.signUp-display').text('Signed up successfully!')
+  $('.signUp-display').addClass('text-success')
   console.log('responseData is', responseData)
+  setTimeout(() => {
+    $('#sign-up').hide()
+  }, 2000)
 }
 
 const signUpFailure = function (error) {
-  $('#error-message').text('Sign up failed')
-  $('#error-message').removeClass()
-  $('#error-message').addClass('text-danger')
-
+  $('#signUpFail').text('Sign up failed, Try Again')
+  $('#signUpFail').addClass('text-danger')
+  // setTimeout(() => {
+  //   $('#signUpFail').hide()
+  // }, 2000)
   console.error('error is' + error)
 }
 
 const signInSuccess = (responseData) => {
   store.user = responseData.user
-  $('#movies-display').text('Signed In successfully')
-  $('#movies-display').removeClass()
-  $('#movies-display').addClass('text-success')
-  $('form').trigger('reset')
-  $('#after-sign-in').show()
-  $('#before-sign-in').hide()
+  $('.signIn-display').text('Signed In successfully')
+  $('.signIn-display').addClass('text-success')
+  console.log('This is working')
 }
 
 const signInFailure = (error) => {
-  $('#error-message').text('Sign In failed')
+  $('#signInFail').text('Sign In failed, Incorrect Email or Password')
+  $('#signInFail').addClass('text-danger')
+  // setTimeout(() => {
+  //   $('#signInFail').reset()
+  // }, 5000)
 
-  $('#error-message').removeClass()
-
-  $('#error-message').addClass('text-danger')
   console.error('error is' + error)
 }
 const signOutSuccess = (responseData) => {
   store.user = responseData.user
-  $('#movies-display').text('Signed Out successfully')
-  $('#movies-display').removeClass()
-  $('#movies-display').addClass('text-success')
-  $('form').trigger('reset')
-  $('#after-sign-in').hide()
-  $('#before-sign-in').show()
+  $('#signOut-display').html('Signed Out Successfully!')
+  console.log('This is working')
+ // $('#sign-up').show()
 }
 
 const signOutFailure = (error) => {
@@ -56,12 +53,9 @@ const signOutFailure = (error) => {
 
 const newGameSuccess = (responseData) => {
   store.user = responseData.user
-  $('#movies-display').text('New Game Started successfully')
+  $('#newGame').text('New Game Started successfully')
   $('#movies-display').removeClass()
   $('#movies-display').addClass('text-success')
-  $('form').trigger('reset')
-  $('#after-sign-in').hide()
-  $('#before-sign-in').show()
 }
 const newGameFailure = (error) => {
   $('#error-message').text('New Game failed')
