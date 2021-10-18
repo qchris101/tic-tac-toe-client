@@ -38,11 +38,11 @@ const newGame = (event) => {
   api.newGame(formData)
     .then(ui.onNewGameSuccess)
     .catch(ui.onNewGameFailure)
-  }
+}
 
 let currentPlayer = 'X'
 const playerRotation = function () {
-  if (currentPlayer === '' || currentPlayer === 'X') {
+  if (currentPlayer === 'X') {
     currentPlayer = 'O'
   } else if (currentPlayer === 'O') {
     currentPlayer = 'X'
@@ -118,6 +118,9 @@ const winConditions = function (spacesOnboard) {
     $('#player').text(`It is ${currentPlayer}'s Victory!'`)
     $('.container').addClass('disabled-div')
   }
+  if (spacesOnboard.length === 18) {
+    $('#player').text("It's a Tie!")
+  }
 }
 const indexZero = function (event) {
   event.preventDefault()
@@ -125,6 +128,7 @@ const indexZero = function (event) {
     spacesOnboard.splice(0, 1, playerRotation())
     document.getElementById('indexZero').innerHTML = spacesOnboard[0]
     console.log(spacesOnboard)
+    spacesOnboard.push('')
     winConditions(spacesOnboard)
   } else {
     console.log('Whoops try somewhere else')
@@ -137,6 +141,7 @@ const indexOne = function (event) {
     spacesOnboard.splice(1, 1, playerRotation())
     document.getElementById('indexOne').innerHTML = spacesOnboard[1]
     console.log(spacesOnboard)
+    spacesOnboard.push('')
     winConditions(spacesOnboard)
   } else {
     console.log('This space is already used up!')
@@ -148,6 +153,7 @@ const indexTwo = function (event) {
     spacesOnboard.splice(2, 1, playerRotation())
     document.getElementById('indexTwo').innerHTML = spacesOnboard[2]
     console.log(spacesOnboard)
+    spacesOnboard.push('')
     winConditions(spacesOnboard)
   } else {
     console.log('This space is already used up!')
@@ -159,6 +165,7 @@ const indexThree = function (event) {
     spacesOnboard.splice(3, 1, playerRotation())
     document.getElementById('indexThree').innerHTML = spacesOnboard[3]
     console.log(spacesOnboard)
+    spacesOnboard.push('')
     winConditions(spacesOnboard)
   } else {
     console.log('This space is already used up!')
@@ -170,6 +177,7 @@ const indexFour = function (event) {
     spacesOnboard.splice(4, 1, playerRotation())
     document.getElementById('indexFour').innerHTML = spacesOnboard[4]
     console.log(spacesOnboard)
+    spacesOnboard.push('')
     winConditions(spacesOnboard)
   } else {
     console.log('This space is already used up!')
@@ -181,6 +189,7 @@ const indexFive = function (event) {
     spacesOnboard.splice(5, 1, playerRotation())
     document.getElementById('indexFive').innerHTML = spacesOnboard[5]
     console.log(spacesOnboard)
+    spacesOnboard.push('')
     winConditions(spacesOnboard)
   } else {
     console.log('This space is already used up!')
@@ -192,6 +201,7 @@ const indexSix = function (event) {
     spacesOnboard.splice(6, 1, playerRotation())
     document.getElementById('indexSix').innerHTML = spacesOnboard[6]
     console.log(spacesOnboard)
+    spacesOnboard.push('')
     winConditions(spacesOnboard)
   } else {
     console.log('This space is already used up!')
@@ -203,6 +213,7 @@ const indexSeven = function (event) {
     spacesOnboard.splice(7, 1, playerRotation())
     document.getElementById('indexSeven').innerHTML = spacesOnboard[7]
     console.log(spacesOnboard)
+    spacesOnboard.push('')
     winConditions(spacesOnboard)
   } else {
     console.log('This space is already used up!')
@@ -214,6 +225,7 @@ const indexEight = function (event) {
     spacesOnboard.splice(8, 1, playerRotation())
     document.getElementById('indexEight').innerHTML = spacesOnboard[8]
     console.log(spacesOnboard)
+    spacesOnboard.push('')
     winConditions(spacesOnboard)
   } else {
     console.log('This space is already used up!')
