@@ -25,9 +25,10 @@ const onSignOut = (event) => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
+
   api.signOut(formData)
-    .then(ui.onSignOutSuccess)
-    .catch(ui.onSignOutFailure)
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
 }
 
 const newGame = (event) => {
@@ -36,8 +37,8 @@ const newGame = (event) => {
   const formData = getFormFields(form)
 
   api.newGame(formData)
-    .then(ui.onNewGameSuccess)
-    .catch(ui.onNewGameFailure)
+    .then(ui.newGameSuccess)
+    .catch(ui.newGameFailure)
 }
 
 let currentPlayer = 'X'
@@ -56,67 +57,67 @@ playerRotation()
 const winConditions = function (spacesOnboard) {
   if (spacesOnboard[0] === 'X' && spacesOnboard[4] === 'X' && spacesOnboard[8] === 'X') {
     $('#player').text(`It is ${currentPlayer}'s Victory!'`)
-    $('.container').addClass('disabled-div')
+    $('#containerGame').addClass('disabled-div')
   }
   if (spacesOnboard[0] === 'O' && spacesOnboard[4] === 'O' && spacesOnboard[8] === 'O') {
     $('#player').text(`It is ${currentPlayer}'s Victory!'`)
-    $('.container').addClass('disabled-div')
+    $('#containerGame').addClass('disabled-div')
   }
   if (spacesOnboard[0] === 'X' && spacesOnboard[1] === 'X' && spacesOnboard[2] === 'X') {
     $('#player').text(`It is ${currentPlayer}'s Victory!'`)
-    $('.container').addClass('disabled-div')
+    $('#containerGame').addClass('disabled-div')
   }
   if (spacesOnboard[0] === 'O' && spacesOnboard[1] === 'O' && spacesOnboard[2] === 'O') {
     $('#player').text(`It is ${currentPlayer}'s Victory!'`)
-    $('.container').addClass('disabled-div')
+    $('#containerGame').addClass('disabled-div')
   }
   if (spacesOnboard[3] === 'X' && spacesOnboard[4] === 'X' && spacesOnboard[5] === 'X') {
     $('#player').text(`It is ${currentPlayer}'s Victory!'`)
-    $('.container').addClass('disabled-div')
+    $('#containerGame').addClass('disabled-div')
   }
   if (spacesOnboard[3] === 'O' && spacesOnboard[4] === 'O' && spacesOnboard[5] === 'O') {
     $('#player').text(`It is ${currentPlayer}'s Victory!'`)
-    $('.container').addClass('disabled-div')
+    $('#containerGame').addClass('disabled-div')
   }
   if (spacesOnboard[6] === 'X' && spacesOnboard[7] === 'X' && spacesOnboard[8] === 'X') {
     $('#player').text(`It is ${currentPlayer}'s Victory!'`)
-    $('.container').addClass('disabled-div')
+    $('#containerGame').addClass('disabled-div')
   }
   if (spacesOnboard[6] === 'O' && spacesOnboard[7] === 'O' && spacesOnboard[8] === 'O') {
     $('#player').text(`It is ${currentPlayer}'s Victory!'`)
-    $('.container').addClass('disabled-div')
+    $('#containerGame').addClass('disabled-div')
   }
   if (spacesOnboard[1] === 'X' && spacesOnboard[4] === 'X' && spacesOnboard[7] === 'X') {
     $('#player').text(`It is ${currentPlayer}'s Victory!'`)
-    $('.container').addClass('disabled-div')
+    $('#containerGame').addClass('disabled-div')
   }
   if (spacesOnboard[1] === 'O' && spacesOnboard[4] === 'O' && spacesOnboard[7] === 'O') {
     $('#player').text(`It is ${currentPlayer}'s Victory!'`)
-    $('.container').addClass('disabled-div')
+    $('#containerGame').addClass('disabled-div')
   }
   if (spacesOnboard[2] === 'X' && spacesOnboard[5] === 'X' && spacesOnboard[8] === 'X') {
     $('#player').text(`It is ${currentPlayer}'s Victory!'`)
-    $('.container').addClass('disabled-div')
+    $('#containerGame').addClass('disabled-div')
   }
   if (spacesOnboard[2] === 'O' && spacesOnboard[5] === 'O' && spacesOnboard[8] === 'O') {
     $('#player').text(`It is ${currentPlayer}'s Victory!'`)
-    $('.container').addClass('disabled-div')
+    $('#containerGame').addClass('disabled-div')
   }
   if (spacesOnboard[2] === 'X' && spacesOnboard[4] === 'X' && spacesOnboard[6] === 'X') {
     $('#player').text(`It is ${currentPlayer}'s Victory!'`)
-    $('.container').addClass('disabled-div')
+    $('#containerGame').addClass('disabled-div')
   }
   if (spacesOnboard[2] === 'O' && spacesOnboard[4] === 'O' && spacesOnboard[6] === 'O') {
     $('#player').text(`It is ${currentPlayer}'s Victory!'`)
-    $('.container').addClass('disabled-div')
+    $('#containerGame').addClass('disabled-div')
   }
   if (spacesOnboard[0] === 'X' && spacesOnboard[3] === 'X' && spacesOnboard[6] === 'X') {
     $('#player').text(`It is ${currentPlayer}'s Victory!'`)
-    $('.container').addClass('disabled-div')
+    $('#containerGame').addClass('disabled-div')
   }
   if (spacesOnboard[0] === 'O' && spacesOnboard[3] === 'O' && spacesOnboard[6] === 'O') {
     $('#player').text(`It is ${currentPlayer}'s Victory!'`)
-    $('.container').addClass('disabled-div')
+    $('#containerGame').addClass('disabled-div')
   }
   if (spacesOnboard.length === 18) {
     $('#player').text("It's a Tie!")
@@ -245,7 +246,7 @@ const restartGame = function (event) {
   document.getElementById('indexEight').innerHTML = ''
   currentPlayer = 'O'
   $('#player').text('')
-  $('.container').removeClass('disabled-div')
+  $('#containerGame').removeClass('disabled-div')
 }
 module.exports = {
   onSignUp,

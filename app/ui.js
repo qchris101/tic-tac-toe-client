@@ -1,6 +1,9 @@
 'use strict'
-const store = require('./store')
 
+const store = require('./store')
+$('#hide-Game').hide()
+$('.hide-Restart').hide()
+$('#newGame').hide()
 const signUpSuccess = function (responseData) {
   $('.signUp-display').text('Signed up successfully!')
   $('.signUp-display').addClass('text-success')
@@ -8,14 +11,17 @@ const signUpSuccess = function (responseData) {
   setTimeout(() => {
     $('#sign-up').hide()
   }, 2000)
+  setTimeout(() => {
+    $('#signUp-display').hide()
+  }, 2000)
 }
 
 const signUpFailure = function (error) {
   $('#signUpFail').text('Sign up failed, Try Again')
   $('#signUpFail').addClass('text-danger')
-  // setTimeout(() => {
-  //   $('#signUpFail').hide()
-  // }, 2000)
+  setTimeout(() => {
+    $('#signUpFail').hide()
+  }, 2000)
   console.error('error is' + error)
 }
 
@@ -23,46 +29,70 @@ const signInSuccess = (responseData) => {
   store.user = responseData.user
   $('.signIn-display').text('Signed In successfully')
   $('.signIn-display').addClass('text-success')
-  console.log('This is working')
+  $('#hide-after-signUp').hide()
+  $('.hide-Restart').show()
+  $('#containerGame').removeClass('disabled-div')
+  $('#newGame').show()
+  setTimeout(() => {
+    $('#sign-in').hide()
+    $('.signIn-display').text('')
+    $('.signIn-display').removeClass('text-success')
+  }, 2000)
 }
 
 const signInFailure = (error) => {
+  $('#signInFail').show()
   $('#signInFail').text('Sign In failed, Incorrect Email or Password')
   $('#signInFail').addClass('text-danger')
-  // setTimeout(() => {
-  //   $('#signInFail').reset()
-  // }, 5000)
-
+  setTimeout(() => {
+    $('#signInFail').hide()
+    $('#signInFail').text('')
+    $('#signInFail').removeClass('text-danger')
+  }, 2000)
   console.error('error is' + error)
 }
 const signOutSuccess = (responseData) => {
-  store.user = responseData.user
-  $('#signOut-display').html('Signed Out Successfully!')
+  $('.signOut-display').show()
+  $('.signOut-display').text('Signed Out Successfully!')
   console.log('This is working')
- // $('#sign-up').show()
+  $('.signOut-display').addClass('text-success')
+  $('#sign-up').show()
+  $('#sign-in').show()
+  $('#hide-after-signUp').show()
+  $('#sign-in').trigger('reset')
+  $('#sign-up').trigger('reset')
+  $('.hide-Restart').hide()
+  $('#hide-Game').hide()
+  $('#containerGame').addClass('disabled-div')
+  $('#newGame').hide()
+  setTimeout(() => {
+    $('.signOut-display').hide()
+    $('.signOut-display').text('')
+    $('.signOut-display').removeClass('text-success')
+  }, 5000)
 }
 
 const signOutFailure = (error) => {
-  $('#error-message').text('Sign In failed')
+  $('.signOut-display').text('Sign Out failed')
+  $('.signOut-display').addClass('text-danger')
 
-  $('#error-message').removeClass()
-
-  $('#error-message').addClass('text-danger')
   console.error('error is' + error)
 }
 
 const newGameSuccess = (responseData) => {
-  store.user = responseData.user
-  $('#newGame').text('New Game Started successfully')
-  $('#movies-display').removeClass()
-  $('#movies-display').addClass('text-success')
+  $('#hide-Game').show()
+  $('#newGameSuccess').text('New Game Started successfully')
+  $('#newGameSuccess').addClass('text-success')
+  $('#hide-GameName').Show()
+  setTimeout(() => {
+    $('#newGameSuccess').hide()
+    $('#newGameSuccess').text('')
+    $('#newGameSuccess').removeClass('text-success')
+  }, 2000)
 }
 const newGameFailure = (error) => {
-  $('#error-message').text('New Game failed')
-
-  $('#error-message').removeClass()
-
-  $('#error-message').addClass('text-danger')
+  $('#newGame').text('New Game failed')
+  $('#newGame').addClass('text-danger')
   console.error('error is' + error)
 }
 
