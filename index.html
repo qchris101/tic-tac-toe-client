@@ -12,8 +12,8 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body >
-      <h1 id= "hide-after-signUp">Please Sign Up or Sign In to play!</h1>
       <h1 id="hide-GameName">Tic Tac Toe</h1>
+      <h2 id= "hide-after-signUp">Please Sign Up / Sign In to play!</h2>
       <h2 id="playerStatus"></h2>
       <div class ="container">
         <nav class="navbar fixed-top">
@@ -45,22 +45,24 @@
                   </fieldset>
                 </form>
                 </div>
-                <div id="signOut-display">
-                <form id="newGame">
-                <button type="submit" class="btn btn-dark">New Game!</button>
-                </form>
+                  <div>
+                    <form id="newGame">
+                      <button type="submit" class="btn btn-dark">New Game!</button>
+                      <section id="newGameSuccess"></section>
+                  </form>
                 <form id = "sign-out">
-                  <section ></section>
-                <button type="submit"  class="btn btn-dark">Sign Out</button>
-              </form>
-              </div>
-              </nav>
-          </div>
+                  <button type="submit"  class="btn btn-dark">Sign Out</button>
+                  <section class= "signOut-display" ></section>
+                </form>
+                </div>
+          </nav>
+    </div>
            <section>
               <div id="player"></div>
             </section>
+
           <div class="container" id = "hide-Game">
-            <div class="row" id="gameBoard">
+            <div class="row" id="containerGame">
                   <div class="col-4  box color" id="indexZero"></div>
                   <div class="col-4  box color" id="indexOne"></div>
                   <div class="col-4  box color" id="indexTwo"></div>
@@ -74,7 +76,7 @@
           </div>
         </div>
           <form id="restart-game" class="hide-Restart">
-          <button type="submit" class="btn btn-dark"> Want to Play again? </button>
+          <button type="submit" class="btn btn-dark"> Reset Board </button>
         </form>
           </body>
 </html>
