@@ -31,11 +31,30 @@ h1,h2 {
 .container {
   max-width: 376px;
 }
-.restart-game {
+#restart-game {
   margin-top: 50px;
   align-items: center;
   display: flex;
   justify-content: center;
+
+}
+#newGame{
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 10px;
+}
+#sign-out{
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 50px;
+
+}
+#sign-in{
+  padding-top: 5px;
+}
+.signOut-display{
+  display: flex;
+  align-items: left;
 }
 
 p {
