@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe!</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body >
+      <h1 id="hide-GameName">Tic Tac Toe</h1>
+      <h2 id= "hide-after-signUp">Please Sign Up and Sign In to play!</h2>
+      <h2 id="playerStatus"></h2>
+      <div class ="container">
+        <nav class="navbar fixed-top">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            </div>
+            <div class="before-sign-in">
+              <form id="sign-up">
+                <fieldset>
+                  <section class="signUp-display" id="signUpFail"></section>
+                  <legend style="font-weight: bold;">Sign Up</legend>
+                  <input type="email" name="credentials[email]" placeholder="Email" style="border-radius: 10px;" required>
+                  <input type="password" name="credentials[password]" placeholder="Password" style="border-radius: 10px;"  required>
+                  <input type= "password" name="credentials[password_confirmation]" placeholder="Password Confirmation" style="border-radius: 10px;" required>
+                  <button type="submit" class="btn btn-dark">Sign Up</button>
+
+                </fieldset>
+
+              </form>
+            </div>
+                <div class="after-sign-in">
+                <form id="sign-in" >
+                  <fieldset>
+                    <legend style="font-weight: bold;">Sign In</legend>
+                    <input type="email" name="credentials[email]" placeholder="Email" style="border-radius: 10px;" required>
+                    <input type="password" name="credentials[password]" placeholder="Password" style="border-radius: 10px;" required>
+                    <button type="submit" class="btn btn-dark">Sign In</button>
+                    <section class="signIn-display" id="signInFail"></section>
+                  </fieldset>
+                </form>
+                </div>
+                  <div class="newGameButton">
+                    <form  id="newGame">
+                      <button type="submit" class="btn btn-dark">New Game! / Show Game Board</button>
+                      <section id="newGameSuccess"></section>
+                  </form>
+                <form id = "sign-out">
+                  <button type="submit"  class="btn btn-dark" style="float: right;">Sign Out</button>
+                  <section class= "signOut-display" ></section>
+                </form>
+                </div>
+          </nav>
+    </div>
+           <section>
+              <div id="player"></div>
+            </section>
+
+          <div class="container" id = "hide-Game">
+            <div class="row" id="containerGame">
+                  <div class="col-4  box color" id="indexZero"></div>
+                  <div class="col-4  box color" id="indexOne"></div>
+                  <div class="col-4  box color" id="indexTwo"></div>
+                  <div class="col-4  box color" id="indexThree"></div>
+                  <div class="col-4  box color" id="indexFour"></div>
+                  <div class="col-4  box color" id="indexFive"></div>
+                  <div class="col-4  box color" id="indexSix"></div>
+                  <div class="col-4  box color" id="indexSeven"></div>
+                  <div class="col-4  box color" id="indexEight"></div>
+
+          </div>
+        </div>
+          <form id="restart-game" class="hide-Restart">
+          <button type="submit" class="btn btn-dark"> Reset Board </button>
+        </form>
+          </body>
+</html>
