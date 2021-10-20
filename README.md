@@ -16,6 +16,6 @@ Explanation:
  -After the conditions are met the player can sign out or choose to play again by hitting the "Reset Board" button to clear the board and continue playing.
  -Game Board is disabled after a win condition is met.
 
- Link To Application:
+ git Link To Application:
 
 (https://qchris101.github.io/tic-tac-toe-client/)
